@@ -50,15 +50,11 @@ salon.setCloseTime(LocalTime.now().plusHours(12));
         return ResponseEntity.ok(booking);
     }
 
-    @GetMapping("/salon")
+    @GetMapping("/salon/{salonId}")
     public ResponseEntity<Set<BookingDto>> getBookingsBySalon(
-
-
+            @PathVariable Long salonId
     ) {
-
-
-        List<Booking> bookings = bokingService.getBookingsBySalon(1L);
-
+        List<Booking> bookings = bokingService.getBookingsBySalon(salonId);
         return ResponseEntity.ok(getBookingDtos(bookings));
     }
 
@@ -83,16 +79,12 @@ salon.setCloseTime(LocalTime.now().plusHours(12));
         return ResponseEntity.ok(BookingMapper.toDto(bookings));
     }
 
-    @PutMapping("/{bookingId}/statur")
+    @PutMapping("/{bookingId}/status")
     public ResponseEntity<BookingDto> updateBookingStatus(
             @PathVariable Long bookingId,
             @RequestParam BookingStatus status
-
     ) throws Exception {
-
-
         Booking bookings = bokingService.updateBooking(bookingId, status);
-
         return ResponseEntity.ok(BookingMapper.toDto(bookings));
     }
 
@@ -115,17 +107,12 @@ salon.setCloseTime(LocalTime.now().plusHours(12));
 
     }
 
-    @GetMapping("/report")
+    @GetMapping("/report/salon/{salonId}")
     public ResponseEntity<SalonReport> getSalonReport(
             @PathVariable Long salonId,
             @RequestParam(required = false) LocalDate date
-
     ) throws Exception {
-
-
-        SalonReport report= bokingService.getSalonReport(1L);
-
+        SalonReport report = bokingService.getSalonReport(salonId);
         return ResponseEntity.ok(report);
-
     }
 }

@@ -18,14 +18,13 @@ public class SalonCategoryController {
     @PostMapping("/salon/{id}")
     public ResponseEntity<Category> createCategory(
             @PathVariable Long id,
-            @RequestBody CategoryDto categoryDto
+            @RequestBody Category category
     )
     {
-            @RequestBody Category category
+        SalonDTO salonDto = new SalonDTO();
         salonDto.setId(id);
 
-        Category category = new Category();
-        Category savedCategory =categoryService.saveCategory(category,salonDto);
+        Category savedCategory = categoryService.saveCategory(category, salonDto);
         return ResponseEntity.ok(savedCategory);
     }
 

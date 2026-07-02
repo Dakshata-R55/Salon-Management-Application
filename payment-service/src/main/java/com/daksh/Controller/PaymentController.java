@@ -4,7 +4,8 @@ import com.daksh.Model.PaymentOrder;
 import com.daksh.Payload.response.PaymentLinkResponse;
 import com.daksh.Service.PaymentService;
 import com.daksh.domain.PaymentMethod;
-import com.daksh.dto.BookingDto;import com.daksh.dto.UserDTO;
+import com.daksh.dto.BookingDto;
+import com.daksh.dto.UserDTO;
 import com.razorpay.RazorpayException;
 import com.stripe.exception.StripeException;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +38,7 @@ public ResponseEntity<PaymentLinkResponse> createPaymnetLink(
 }
 
 
-    @GetMapping("/paymentOrderId")
+    @GetMapping("/{paymentOrderId}")
     public ResponseEntity<PaymentOrder> getPaymentOrderById(
           @PathVariable Long paymentOrderId
     ) throws Exception {

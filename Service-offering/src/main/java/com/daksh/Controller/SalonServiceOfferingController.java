@@ -31,7 +31,7 @@ private final ServiceOfferingService serviceOfferingService;
     return ResponseEntity.ok(serviceOfferings);
 }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{serviceId}")
     public ResponseEntity<ServiceOffering> updateService(
             @PathVariable Long serviceId,
             @RequestBody ServiceOffering serviceOffering

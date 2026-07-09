@@ -8,8 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
+        <module name="gateway-server" />
+        <module name="user-service" />
       </profile>
-      <profile name="Annotation profile for payment-service" enabled="true">
+      <profile name="Annotation profile for salom-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,12 +21,12 @@
         <module name="Booking-Service" />
         <module name="Service-offering" />
         <module name="payment-service" />
+        <module name="salom-service" />
         <module name="categoryService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="salon-service" target="17" />
-      <module name="user-service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,7 +35,9 @@
       <module name="Service-offering" options="-parameters" />
       <module name="categoryService" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="payment-service" options="-parameters" />
+      <module name="salom-service" options="-parameters" />
       <module name="salon-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
